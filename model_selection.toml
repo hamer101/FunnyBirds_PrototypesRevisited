@@ -1,0 +1,20 @@
+# That parameter names the folder under ProtoPNet/saved_models/{base_architecture}/
+# Don't forget to change it for different training runs
+experiment_run = '001' 
+
+# If you use the suggested folder structure, you may leave these paths relative to your project's directiory.
+# If you changed it, please provide absolute paths
+[paths]
+model_path = 'ProtoPNet/saved_models/vgg19/pp3_256/90_14push0.9580.pth'
+img_dir = 'ProtoPNet/saved_models/vgg19/pp3_256/img'
+ppnet_dir = 'ProtoPNet'
+dataset_dir = 'FunnyBirds'
+
+# Here we link all the params that have been changed between different models
+# Changed, yet not linked params (accustoming ProtoPNet to FunnyBirds dataset)
+# remain in the ProtoPNet/settings_funnybirds_multitarget.py
+[model_params]
+base_architecture = 'resnet50' # or 'vgg19' or 'densenet169'
+prototype_size = 128 # We tested 256 and 512 as well.
+joint_lr_step_size = 10
+push_start = 25
